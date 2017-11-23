@@ -1,0 +1,437 @@
+1 sqoop list-databases \ 
+2   --connect "jdbc:mysql://quickstart.cloudera:3306" \ 
+3   --username retail_dba \ 
+4   --password cloudera 
+5 
+ 
+6 sqoop list-tables \  
+7   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+8   --username retail_dba \ 
+9   --password cloudera 
+10 
+ 
+11 sqoop eval \ 
+12   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+13   --username retail_dba \ 
+14   --password cloudera \ 
+15   --query "select count(1) from order_items" 
+16 
+ 
+17 -- Reference: http://www.cloudera.com/content/cloudera/en/developers/home/developer-admin-resources/get-started-with-hadoop-tutorial/exercise-1.html 
+18 sqoop import-all-tables \ 
+19   -m 12 \ 
+20   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+21   --username=retail_dba \ 
+22   --password=cloudera \ 
+23   --as-avrodatafile \ 
+24   --warehouse-dir=/user/hive/warehouse/retail_stage.db 
+25 
+ 
+26 --Default 
+27 sqoop import \ 
+28   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+29   --username=retail_dba \ 
+30   --password=cloudera \ 
+31   --table departments \ 
+32   --as-textfile \ 
+33   --target-dir=/user/cloudera/departments 
+34 
+ 
+35 sqoop import \ 
+36   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+37   --username=retail_dba \ 
+38   --password=cloudera \ 
+39   --table departments \ 
+40   --as-sequencefile \ 
+41   --target-dir=/user/cloudera/departments 
+42 
+ 
+43 sqoop import \ 
+44   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+45   --username=retail_dba \ 
+46   --password=cloudera \ 
+47   --table departments \ 
+48   --as-avrodatafile \ 
+49   --target-dir=/user/cloudera/departments 
+50 
+ 
+51 -- A file with extension avsc will be created under the directory from which sqoop import is executed 
+52 -- Copy avsc file to HDFS location 
+53 -- Create hive table with LOCATION to /user/cloudera/departments and TBLPROPERTIES pointing to avsc file 
+54 hadoop fs -put sqoop_import_departments.avsc /user/cloudera 
+55 
+ 
+56 CREATE EXTERNAL TABLE departments 
+57 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' 
+58 STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat' 
+59 OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat' 
+60 LOCATION 'hdfs:///user/cloudera/departments' 
+61 TBLPROPERTIES ('avro.schema.url'='hdfs://quickstart.cloudera/user/cloudera/sqoop_import_departments.avsc'); 
+62 
+ 
+63 
+ 
+64 -- It will create tables in default database in hive 
+65 -- Using snappy compression 
+66 -- As we have imported all tables before make sure you drop the directories 
+67 -- Launch hive drop all tables 
+68 drop table departments; 
+69 drop table categories; 
+70 drop table products; 
+71 drop table orders; 
+72 drop table order_items; 
+73 drop table customers; 
+74 
+ 
+75 -- Dropping directories, in case your hive database/tables in consistent state 
+76 hadoop fs -rm -R /user/hive/warehouse/departments 
+77 hadoop fs -rm -R /user/hive/warehouse/categories 
+78 hadoop fs -rm -R /user/hive/warehouse/products 
+79 hadoop fs -rm -R /user/hive/warehouse/orders  
+80 hadoop fs -rm -R /user/hive/warehouse/order_itmes 
+81 hadoop fs -rm -R /user/hive/warehouse/customers 
+82 
+ 
+83 sqoop import-all-tables \ 
+84   --num-mappers 1 \ 
+85   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+86   --username=retail_dba \ 
+87   --password=cloudera \ 
+88   --hive-import \ 
+89   --hive-overwrite \ 
+90   --create-hive-table \ 
+91   --compress \ 
+92   --compression-codec org.apache.hadoop.io.compress.SnappyCodec \ 
+93   --outdir java_files 
+94 
+ 
+95 sudo -u hdfs hadoop fs -mkdir /user/cloudera/retail_stage 
+96 sudo -u hdfs hadoop fs -chmod +rw /user/cloudera/retail_stage 
+97 hadoop fs -copyFromLocal ~/*.avsc /user/cloudera/retail_stage 
+98 
+ 
+99 -- Basic import 
+100 sqoop import \ 
+101   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+102   --username=retail_dba \ 
+103   --password=cloudera \ 
+104   --table departments \ 
+105   --target-dir /user/cloudera/departments  
+106 
+ 
+107 -- Boundary Query and columns 
+108 sqoop import \ 
+109   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+110   --username=retail_dba \ 
+111   --password=cloudera \ 
+112   --table departments \ 
+113   --target-dir /user/cloudera/departments \ 
+114   -m 2 \ 
+115   --boundary-query "select 2, 8 from departments limit 1" \ 
+116   --columns department_id,department_name 
+117 
+ 
+118 -- query and split-by 
+119 sqoop import \ 
+120   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+121   --username=retail_dba \ 
+122   --password=cloudera \ 
+123   --query="select * from orders join order_items on orders.order_id = order_items.order_item_order_id where \$CONDITIONS" \ 
+124   --target-dir /user/cloudera/order_join \ 
+125   --split-by order_id \ 
+126   --num-mappers 4 
+127 
+ 
+128 -- Copying into existing table or directory (append) 
+129 -- Customizing number of threads (num-mappers) 
+130 -- Changing delimiter 
+131 sqoop import \ 
+132   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+133   --username=retail_dba \ 
+134   --password=cloudera \ 
+135   --table departments \ 
+136   --target-dir /user/hive/warehouse/retail_ods.db/departments \ 
+137   --append \ 
+138   --fields-terminated-by '|' \ 
+139   --lines-terminated-by '\n' \ 
+140   --num-mappers 1 \ 
+141   --outdir java_files 
+142 
+ 
+143 -- Importing table with out primary key using multiple threads (split-by) 
+144 -- When using split-by, using indexed column is highly desired 
+145 -- If the column is not indexed then performance will be bad  
+146 -- because of full table scan by each of the thread 
+147 sqoop import \ 
+148   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+149   --username=retail_dba \ 
+150   --password=cloudera \ 
+151   --table departments \ 
+152   --target-dir /user/hive/warehouse/retail_ods.db/departments \ 
+153   --append \ 
+154   --fields-terminated-by '|' \ 
+155   --lines-terminated-by '\n' \ 
+156   --split-by department_id \ 
+157   --outdir java_files 
+158 
+ 
+159 -- Getting delta (--where) 
+160 sqoop import \ 
+161   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+162   --username=retail_dba \ 
+163   --password=cloudera \ 
+164   --table departments \ 
+165   --target-dir /user/hive/warehouse/retail_ods.db/departments \ 
+166   --append \ 
+167   --fields-terminated-by '|' \ 
+168   --lines-terminated-by '\n' \ 
+169   --split-by department_id \ 
+170   --where "department_id > 7" \ 
+171   --outdir java_files 
+172 
+ 
+173 -- Incremental load 
+174 sqoop import \ 
+175   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+176   --username=retail_dba \ 
+177   --password=cloudera \ 
+178   --table departments \ 
+179   --target-dir /user/hive/warehouse/retail_ods.db/departments \ 
+180   --append \ 
+181   --fields-terminated-by '|' \ 
+182   --lines-terminated-by '\n' \ 
+183   --check-column "department_id" \ 
+184   --incremental append \ 
+185   --last-value 7 \ 
+186   --outdir java_files 
+187 
+ 
+188 sqoop job --create sqoop_job \ 
+189   -- import \ 
+190   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+191   --username=retail_dba \ 
+192   --password=cloudera \ 
+193   --table departments \ 
+194   --target-dir /user/hive/warehouse/retail_ods.db/departments \ 
+195   --append \ 
+196   --fields-terminated-by '|' \ 
+197   --lines-terminated-by '\n' \ 
+198   --check-column "department_id" \ 
+199   --incremental append \ 
+200   --last-value 7 \ 
+201   --outdir java_files 
+202 
+ 
+203 sqoop job --list 
+204 
+ 
+205 sqoop job --show sqoop_job 
+206 
+ 
+207 sqoop job --exec sqoop_job 
+208 
+ 
+209 -- Hive related 
+210 -- Overwrite existing data associated with hive table (hive-overwrite) 
+211 sqoop import \ 
+212   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+213   --username=retail_dba \ 
+214   --password=cloudera \ 
+215   --table departments \ 
+216   --fields-terminated-by '|' \ 
+217   --lines-terminated-by '\n' \ 
+218   --hive-home /user/hive/warehouse/retail_ods.db \ 
+219   --hive-import \ 
+220   --hive-overwrite \ 
+221   --hive-table departments \ 
+222   --outdir java_files 
+223 
+ 
+224 --Create hive table example 
+225 sqoop import \ 
+226   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+227   --username=retail_dba \ 
+228   --password=cloudera \ 
+229   --table departments \ 
+230   --fields-terminated-by '|' \ 
+231   --lines-terminated-by '\n' \ 
+232   --hive-home /user/hive/warehouse \ 
+233   --hive-import \ 
+234   --hive-table departments_test \ 
+235   --create-hive-table \ 
+236   --outdir java_files 
+237 
+ 
+238 --Connect to mysql and create database for reporting database 
+239 --user:root, password:cloudera 
+240 mysql -u root -p 
+241 create database retail_rpt_db; 
+242 grant all on retail_rpt_db.* to retail_dba; 
+243 flush privileges; 
+244 use retail_rpt_db; 
+245 create table departments as select * from retail_db.departments where 1=2; 
+246 exit; 
+247 
+ 
+248 --For certification change database name retail_rpt_db to retail_db 
+249 sqoop export --connect "jdbc:mysql://quickstart.cloudera:3306/retail_rpt_db" \ 
+250        --username retail_dba \ 
+251        --password cloudera \ 
+252        --table departments \ 
+253        --export-dir /user/hive/warehouse/retail_ods.db/departments \ 
+254        --input-fields-terminated-by '|' \ 
+255        --input-lines-terminated-by '\n' \ 
+256        --num-mappers 2 \ 
+257        --batch \ 
+258        --outdir java_files 
+259 
+ 
+260 sqoop export --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+261   --username retail_dba \ 
+262   --password cloudera \ 
+263   --table departments \ 
+264   --export-dir /user/cloudera/sqoop_import/departments_export \ 
+265   --batch \ 
+266   --outdir java_files \ 
+267   -m 1 \ 
+268   --update-key department_id \ 
+269   --update-mode allowinsert 
+270 
+ 
+271 sqoop export --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+272   --username retail_dba \ 
+273   --password cloudera \ 
+274   --table departments_test \ 
+275   --export-dir /user/hive/warehouse/departments_test \ 
+276   --input-fields-terminated-by '\001' \ 
+277   --input-lines-terminated-by '\n' \ 
+278   --num-mappers 2 \ 
+279   --batch \ 
+280   --outdir java_files \ 
+281   --input-null-string nvl \ 
+282   --input-null-non-string -1 
+283 
+ 
+284 --Merge process begins 
+285 hadoop fs -mkdir /user/cloudera/sqoop_merge 
+286 
+ 
+287 --Initial load 
+288 sqoop import \ 
+289   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+290   --username=retail_dba \ 
+291   --password=cloudera \ 
+292   --table departments \ 
+293   --as-textfile \ 
+294   --target-dir=/user/cloudera/sqoop_merge/departments 
+295 
+ 
+296 --Validate 
+297 sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+298   --username retail_dba \ 
+299   --password cloudera \ 
+300   --query "select * from departments"  
+301 
+ 
+302 hadoop fs -cat /user/cloudera/sqoop_merge/departments/part* 
+303 
+ 
+304 --update 
+305 sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+306   --username retail_dba \ 
+307   --password cloudera \ 
+308   --query "update departments set department_name='Testing Merge' where department_id = 9000" 
+309 
+ 
+310 --Insert 
+311 sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+312   --username retail_dba \ 
+313   --password cloudera \ 
+314   --query "insert into departments values (10000, 'Inserting for merge')" 
+315 
+ 
+316 sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+317   --username retail_dba \ 
+318   --password cloudera \ 
+319   --query "select * from departments" 
+320 
+ 
+321 --New load 
+322 sqoop import \ 
+323   --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \ 
+324   --username=retail_dba \ 
+325   --password=cloudera \ 
+326   --table departments \ 
+327   --as-textfile \ 
+328   --target-dir=/user/cloudera/sqoop_merge/departments_delta \ 
+329   --where "department_id >= 9000" 
+330 
+ 
+331 hadoop fs -cat /user/cloudera/sqoop_merge/departments_delta/part* 
+332 
+ 
+333 --Merge 
+334 sqoop merge --merge-key department_id \ 
+335   --new-data /user/cloudera/sqoop_merge/departments_delta \ 
+336   --onto /user/cloudera/sqoop_merge/departments \ 
+337   --target-dir /user/cloudera/sqoop_merge/departments_stage \ 
+338   --class-name departments \ 
+339   --jar-file <get_it_from_last_import> 
+340 
+ 
+341 hadoop fs -cat /user/cloudera/sqoop_merge/departments_stage/part* 
+342 
+ 
+343 --Delete old directory 
+344 hadoop fs -rm -R /user/cloudera/sqoop_merge/departments 
+345 
+ 
+346 --Move/rename stage directory to original directory 
+347 hadoop fs -mv /user/cloudera/sqoop_merge/departments_stage /user/cloudera/sqoop_merge/departments  
+348 
+ 
+349 --Validate that original directory have merged data 
+350 hadoop fs -cat /user/cloudera/sqoop_merge/departments/part* 
+351 
+ 
+352 --Merge process ends 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+  Contact GitHub
+API
+Training
+Shop
+Blog
+About
+
+
+   
+
+
+
+
+
