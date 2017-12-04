@@ -1,0 +1,21 @@
+0) Quick helps
+
+	hive --help
+	hive -e  
+	hive -e 'set k=v'
+	hive --service  --help
+	hive --service metastore --help
+	hive --service hiveserver --help
+	hive 
+
+	show tables 'db.*';
+	set -v;
+	show functions;
+	show PARTITIONS auditlogs_part;
+	describe function xpath;
+	describe function extended xpath;
+	describe auditlogs;
+	describe extended auditlogs;
+	describe formatted auditlogs ;
+
+	hive -S ( silent )

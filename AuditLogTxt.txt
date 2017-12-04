@@ -1,0 +1,100 @@
+27 Oct 2009 00:00:00,300^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^13 ms
+27 Oct 2009 00:00:01,086^7^OIF^10^^203.86.166.152^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:01,775^7^OIF^10^^203.86.166.152^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:01,777^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^22 ms
+27 Oct 2009 00:00:01,966^7^OIF^11^^86.108.109.27^null^^Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; eSobiSubscriber^Authentication failed
+27 Oct 2009 00:00:02,134^7^OIF^10^^203.86.166.152^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:02,344^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^52 ms
+27 Oct 2009 00:00:02,686^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^15 ms
+27 Oct 2009 00:00:03,098^7^OIF^10^^203.86.166.152^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:03,406^7^OIF^12^mycompmaps^^null^f9a90f4f-d94c-45b5-b172-a78f2cb24baa^^11 ms
+27 Oct 2009 00:00:03,727^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^53 ms
+27 Oct 2009 00:00:04,248^7^OIF^72^^213.26.205.144^null^^Mozilla/5.0 (SymbianOS/9.4; Series60/5.0 phoneN97-1/10.0.012; Profile/MIDP-2.1 Configuration/CLDC-1.1; en-us) AppleWebKit/525 (^LOGIN: GET https://phone.com/fed/engine/pef.jsp
+27 Oct 2009 00:00:04,300^7^OIF^12^mycompmaps^^null^f9a90f4f-d94c-45b5-b172-a78f2cb24baa^^13 ms
+27 Oct 2009 00:00:05,680^7^OIF^75^^81.23.24.127^^^^NOASC created using NOAPC
+27 Oct 2009 00:00:05,800^7^OIF^12^mycompmail^^null^6012419e-f612-4f4c-9134-175a5b199a5c^^93 ms
+27 Oct 2009 00:00:08,187^7^OIF^10^^86.108.96.111^laithco^^Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 phone5800d-1/31.0.008; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^NOASC set
+27 Oct 2009 00:00:08,343^7^OIF^12^mycompshare^^null^ce3f75e8-19d2-4875-bffe-f895d222a934^^140 ms
+27 Oct 2009 00:00:09,073^7^OIF^75^^58.68.66.251^^^^NOASC created using NOAPC
+27 Oct 2009 00:00:09,151^7^OIF^12^mycompfiles^^null^8bce4545-7e88-4abb-8eb8-0755d043d4e9^^53 ms
+27 Oct 2009 00:00:10,032^7^OIF^99^^217.190.253.192^null^27ab4da1-afc9-416c-bd5b-b4e66f75fb17^Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30^16 ms
+27 Oct 2009 00:00:10,075^7^OIF^75^^82.49.65.77^^^^NOASC created using NOAPC
+27 Oct 2009 00:00:10,197^7^OIF^12^mycompcom^^null^ab738d71-d8f6-40f0-bff3-77d44bbf13f5^^99 ms
+27 Oct 2009 00:00:10,206^7^OIF^99^^217.190.253.192^null^-^Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30^1 ms
+27 Oct 2009 00:00:10,217^7^OIF^12^mycompshare^^null^ce3f75e8-19d2-4875-bffe-f895d222a934^^53 ms
+27 Oct 2009 00:00:10,673^7^OIF^11^^77.194.188.116^null^^Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; InfoPath.2; .NET CLR 3.5.307^Authentication failed
+27 Oct 2009 00:00:10,991^7^OIF^10^^217.190.253.192^conma72^^Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30^NOASC set
+27 Oct 2009 00:00:11,115^7^OIF^12^mycompcom^^null^71bdba8d-860c-4bfb-8436-3fdc60e35002^^59 ms
+27 Oct 2009 00:00:11,117^7^OIF^12^mycompfiles^^null^27ab4da1-afc9-416c-bd5b-b4e66f75fb17^^12 ms
+27 Oct 2009 00:00:11,624^7^OIF^10^^212.183.134.129^knmonitoring^^Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 phoneN95/10.0.010; Profile/MIDP-2.0 Configuration/CLDC-1.1) AppleWebKit/413 (KHTML,^NOASC set
+27 Oct 2009 00:00:13,303^7^OIF^12^mycompmobi^^null^58df62b3-6751-4328-8874-42426d678674^^53 ms
+27 Oct 2009 00:00:13,380^7^OIF^12^mycompshare^^null^12c7c051-d9c9-4176-9623-0c4e01fa150a^^54 ms
+27 Oct 2009 00:00:13,816^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:14,108^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:14,200^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^64 ms
+27 Oct 2009 00:00:14,460^7^OIF^99^^78.131.178.126^null^8fadc5d5-c015-47d8-8e0c-adb595e9e8a9^Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 phone5800d-1/30.0.011; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^18 ms
+27 Oct 2009 00:00:14,475^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:14,497^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^13 ms
+27 Oct 2009 00:00:14,733^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:14,807^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^12 ms
+27 Oct 2009 00:00:14,933^7^OIF^99^^78.131.178.126^null^-^Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 phone5800d-1/30.0.011; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^2 ms
+27 Oct 2009 00:00:15,064^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^14 ms
+27 Oct 2009 00:00:15,423^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:15,780^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^11 ms
+27 Oct 2009 00:00:15,892^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:15,930^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:16,050^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:16,204^7^OIF^10^^208.36.123.183^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:16,233^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^19 ms
+27 Oct 2009 00:00:16,235^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^22 ms
+27 Oct 2009 00:00:16,447^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^15 ms
+27 Oct 2009 00:00:16,570^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^26 ms
+27 Oct 2009 00:00:16,670^7^OIF^12^mycompmail^^null^b35585a9-c5f9-46c7-af6e-aaa801efaa2e^^21 ms
+27 Oct 2009 00:00:16,911^7^OIF^10^^78.92.248.88^csumi^^Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 phone5800d-1/31.0.008; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^NOASC set
+27 Oct 2009 00:00:17,117^7^OIF^12^mycompmobi^^null^01bbe1ec-a397-4758-a34a-b9ce0eeb6fb2^^38 ms
+27 Oct 2009 00:00:17,419^7^OIF^10^^78.131.178.126^r3vo^^Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 phone5800d-1/30.0.011; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^NOASC set
+27 Oct 2009 00:00:17,864^7^OIF^99^^85.102.166.229^null^8e2a44f5-9fd5-4903-a699-1883c1e628f0^Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3^34 ms
+27 Oct 2009 00:00:21,685^7^OIF^99^^121.90.159.199^null^ac7e3595-6914-4a9a-b67a-34c17692ce30^Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 phoneE63-1/100.21.110; Profile/MIDP-2.0 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^19 ms
+27 Oct 2009 00:00:22,859^7^OIF^72^^200.29.118.151^null^^Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.10) Gecko/20071115 Firefox/2.0.0.10^LOGIN: GET https://phone.com/fed/engine/pef.jsp
+27 Oct 2009 00:00:22,868^7^OIF^10^^82.204.182.174^ncimprod01^^Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.^NOASC set
+27 Oct 2009 00:00:23,050^7^OIF^12^mycompcom^^null^4164ea17-3e66-4503-b5d7-296271afce52^^12 ms
+27 Oct 2009 00:00:23,081^7^OIF^10^^112.110.13.21^iamraghu^^Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 phoneE63-1/100.21.110; Profile/MIDP-2.0 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^NOASC set
+27 Oct 2009 00:00:23,439^7^OIF^72^^200.85.31.72^null^^Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 phone5800d-1b/20.2.014; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (^LOGIN: GET https://phone.com/fed/engine/pef.jsp
+27 Oct 2009 00:00:23,496^7^OIF^11^^84.127.77.157^null^^Mozilla/5.0 (SymbianOS/9.4; Series60/5.0 phoneN97-1/12.0.026; Profile/MIDP-2.1 Configuration/CLDC-1.1; en-us) AppleWebKit/525 (^Authentication failed
+27 Oct 2009 00:00:24,101^7^OIF^72^^145.7.224.70^null^^Mozilla/5.0 (SymbianOS/9.3; U; Series60/3.2 phoneN96-1/1.20; Profile/MIDP-2.1 Configuration/CLDC-1.1;) AppleWebKit/413 (KHTML, ^LOGIN: GET https://phone.com/fed/engine/pef.jsp
+27 Oct 2009 00:00:25,187^7^OIF^11^^77.194.188.116^null^^Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; InfoPath.2; .NET CLR 3.5.307^Authentication failed
+27 Oct 2009 00:00:25,375^7^OIF^99^^121.90.159.199^null^-^Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 phoneE63-1/100.21.110; Profile/MIDP-2.0 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^1 ms
+27 Oct 2009 00:00:27,399^7^OIF^75^^118.96.227.191^^^^NOASC created using NOAPC
+27 Oct 2009 00:00:27,548^7^OIF^12^mycompmail^^null^01ab41a3-dede-4789-a1f4-6cf99328cd49^^129 ms
+27 Oct 2009 00:00:33,488^7^OIF^10^^203.86.166.83^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:33,547^7^OIF^10^^203.86.166.83^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:33,719^7^OIF^10^^203.86.166.83^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:33,890^7^OIF^10^^121.90.159.199^b2bnz^^Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 phoneE63-1/100.21.110; Profile/MIDP-2.0 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^NOASC set
+27 Oct 2009 00:00:34,026^7^OIF^10^^189.71.183.110^aretusa.costa^^Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; InfoPath.2; .N^NOASC set
+27 Oct 2009 00:00:34,079^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^51 ms
+27 Oct 2009 00:00:34,122^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^15 ms
+27 Oct 2009 00:00:34,250^7^OIF^99^^201.211.130.83^null^a2366214-6c6e-42cf-8e8e-1da9f8f8e2c1^Mozilla/5.0 (compatible; Konqueror/3.5; Linux) KHTML/3.5.8 (like Gecko)^31 ms
+27 Oct 2009 00:00:34,270^7^OIF^12^mycompmail^^null^85a98454-a5b7-4e43-95fa-4688e2cd3b7b^^42 ms
+27 Oct 2009 00:00:34,307^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^12 ms
+27 Oct 2009 00:00:34,534^7^OIF^12^mycompcom^^null^bd853573-acf2-488a-8a83-36d3a352af5d^^40 ms
+27 Oct 2009 00:00:34,768^7^OIF^12^mycompmail^^null^71bdba8d-860c-4bfb-8436-3fdc60e35002^^52 ms
+27 Oct 2009 00:00:34,969^7^OIF^72^^81.103.25.161^null^^Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 GTB5^LOGIN: GET https://phone.com/fed/engine/pef.jsp
+27 Oct 2009 00:00:35,802^7^OIF^12^mycompmail^^null^71bdba8d-860c-4bfb-8436-3fdc60e35002^^13 ms
+27 Oct 2009 00:00:35,857^7^OIF^12^mycompfiles^^null^ac7e3595-6914-4a9a-b67a-34c17692ce30^^11 ms
+27 Oct 2009 00:00:36,924^7^OIF^10^^217.118.92.47^milena19^^Opera/9.23 (Windows NT 6.0; U; SV1; MEGAUPLOAD 1.0; ru)^NOASC set
+27 Oct 2009 00:00:38,190^7^OIF^75^^87.0.85.155^^^^NOASC created using NOAPC
+27 Oct 2009 00:00:38,222^7^OIF^12^mycompfiles^^null^2111056c-ceec-43aa-9676-b0cd4a2a67ba^^12 ms
+27 Oct 2009 00:00:38,549^7^OIF^12^mycompmail^^null^52f95487-2b4b-4584-86b9-a1acba4ea92b^^28 ms
+27 Oct 2009 00:00:39,585^7^OIF^72^^190.11.101.234^null^^Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; WOW64; Trident/4.0; GTB6; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .N^LOGIN: GET https://phone.com/fed/engine/pef.jsp
+27 Oct 2009 00:00:44,293^7^OIF^10^^203.86.166.83^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:44,449^7^OIF^10^^203.86.166.83^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:44,569^7^OIF^10^^203.86.166.83^mycompmonitor01^^WebInject Application Tester^NOASC set
+27 Oct 2009 00:00:44,812^7^OIF^99^^212.183.134.129^null^58df62b3-6751-4328-8874-42426d678674^Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 phoneN95/10.0.010; Profile/MIDP-2.0 Configuration/CLDC-1.1) AppleWebKit/413 (KHTML,^14 ms
+27 Oct 2009 00:00:44,994^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^51 ms
+27 Oct 2009 00:00:45,098^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^12 ms
+27 Oct 2009 00:00:45,595^7^OIF^11^^41.206.154.101^null^^Mozilla/5.0 (SymbianOS/9.4; U; Series60/5.0 phone5800d-1/21.0.025; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (K^Authentication failed
+27 Oct 2009 00:00:45,811^7^OIF^12^mycompmaps^^null^2166a61a-ed2f-4981-999e-243fa0d2f5ce^^52 ms
+27 Oct 2009 00:00:45,937^7^OIF^12^mycompmail^^null^c5300550-05bd-4356-ab09-cc53de3f56c8^^12 ms
+27 Oct 2009 00:00:47,329^7^OIF^12^mycompmaps^^null^2166a61a-ed2f-4981-999e-243fa0d2f5ce^^22 ms
+27 Oct 2009 00:00:48,409^7^OIF^12^mycompshare^^null^befd1767-295b-4845-ab69-ee9a0a017404^^51 ms
+27 Oct 2009 00:00:49,397^7^OIF^72^^87.223.174.42^null^^Mozilla/5.0 (X11; U; Linux armv7l; es-ES; rv:1.9.2a1pre) Gecko/20090928 Firefox/3.5 Maemo Browser 1.4.1.15 RX-51 N900^LOGIN: GET https://phone.com/fed/engine/pef.jsp
